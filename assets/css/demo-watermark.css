@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Demo watermark
+   Self-contained overlay for client previews. Nothing in styles.css depends
+   on it. To ship the final site, delete this file, demo-guard.js and the
+   two lines that include them in each HTML page.
+
+   Stripe text: "DEMO · NICHT KOPIEREN" (edit inside the SVG below).
+   ========================================================================== */
+
+:root {
+  --demo-mark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><defs><pattern id='m' width='520' height='300' patternUnits='userSpaceOnUse' patternTransform='rotate(-28)'><g fill='rgba(128,128,128,0.07)'><rect y='48' width='520' height='44'/><rect y='198' width='520' height='44'/></g><g stroke='rgba(128,128,128,0.22)' stroke-width='1'><path d='M0 48.5H520M0 91.5H520M0 198.5H520M0 241.5H520'/></g><g font-family='Helvetica Neue,Helvetica,Arial,sans-serif' font-size='17' font-weight='700' letter-spacing='5' fill='rgba(128,128,128,0.34)' text-anchor='middle'><text x='260' y='76'>DEMO · NICHT KOPIEREN</text><text x='0' y='226'>DEMO · NICHT KOPIEREN</text><text x='520' y='226'>DEMO · NICHT KOPIEREN</text></g></pattern></defs><rect width='100%25' height='100%25' fill='url(%23m)'/></svg>");
+}
+
+/* Full screen stripes above everything on the page, never blocking clicks */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  pointer-events: none;
+  background: var(--demo-mark) center / 100% 100% no-repeat;
+}
+
+/* The project dialog opens in the browser top layer, so it gets its own copy */
+.pd::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  pointer-events: none;
+  background: var(--demo-mark) center / 100% 100% no-repeat;
+}
+
+/* The dialog's open and close animations use a transform, which briefly
+   anchors fixed layers to the dialog box. Fading in after it settles avoids
+   a visible jump in the stripes. */
+@media (prefers-reduced-motion: no-preference) {
+  .pd[open]::after, .pd[open]::before { animation: demo-mark-in 240ms ease 460ms both; }
+  .pd.is-closing::after, .pd.is-closing::before { animation: none; opacity: 0; }
+}
+@keyframes demo-mark-in { from { opacity: 0; } }
+
+/* Small label so the stripes read as intentional */
+body::before, .pd::before {
+  content: "Demo-Vorschau · Nicht zur Weitergabe";
+  position: fixed;
+  left: 50%;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 2147483647;
+  transform: translateX(-50%);
+  pointer-events: none;
+  padding: 0.55rem 1rem 0.55rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle at 1.1rem 50%, #e2a64d 0 0.22rem, transparent 0.27rem),
+    rgba(18, 18, 18, 0.78);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  color: #f2f1ed;
+  font-family: 'General Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Copy deterrents: no text selection or image dragging, form fields stay usable */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input, textarea, select, [contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+img, svg, a {
+  -webkit-user-drag: none;
+}
+
+/* Printing or saving as PDF shows a notice instead of the design */
+@media print {
+  body > * { display: none !important; }
+  body::after { display: none; }
+  body::before {
+    content: "Demo-Vorschau. Druck und Weitergabe sind nicht gestattet.";
+    position: static;
+    transform: none;
+    display: block;
+    max-width: 30rem;
+    margin: 30vh auto 0;
+    padding: 0 1rem;
+    white-space: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.5;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    color: #121212;
+    font-size: 14pt;
+    text-align: center;
+  }
+}
