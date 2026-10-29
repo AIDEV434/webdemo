@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Immobilien Boutique Feed">
+<meta property="og:description" content="Instagram-Konzept für die Immobilien Boutique AG von Mozaic Digital.">
+<meta property="og:image" content="img/alpine.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Immobilien Boutique Feed</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Instagram-Konzept für die Immobilien Boutique AG: neuer Feed, Beitragsvorlagen, Bildlook, Stories und Highlights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
+<style>
+/* Layout: quiet left-aligned pitch; the phone feed and the bold posts carry the page. */
+:root{
+  --bg:#ECECE6; --surface:#F6F6F2; --ink:#1F2428; --muted:#5A6064; --line:#CDCEC5;
+  --gold:#C2AB79; --gold-ink:#7A6638; --btn:#1F2428; --btn-ink:#F2F1EC; --frame:#1B1F22;
+  /* fixed post palette */
+  --p-paper:#EEEDE7; --p-ink:#1F2428; --p-slate:#1F2428; --p-gold:#C2AB79; --p-gold-ink:#86703F; --p-white:#FFFFFF; --p-muted:#5E6468;
+  --p-sky-1:#86B2DC; --p-sky-2:#D6E4EF; --p-sky-u1:#C9D6E2; --p-sky-u2:#F1F1EE;
+  --p-shade:rgba(18,22,25,.82); --p-shade-0:rgba(18,22,25,0); --p-glass:rgba(255,255,255,.14); --p-glass-dark:rgba(18,22,25,.42); --p-glass-line:rgba(255,255,255,.55);
+  --ig-bg:#000000; --ig-fg:#F5F5F5; --ig-muted:#A8A8A8; --ig-line:#262626; --ig-btn:#262626; --ig-blue:#0095F6;
+  --font:"Poppins","Avenir Next","Montserrat","Helvetica Neue",Arial,sans-serif;
+  --step--1:.85rem; --step-0:1rem; --step-1:1.2rem; --step-2:1.6rem; --step-3:clamp(1.9rem,3.8vw,2.8rem); --step-4:clamp(2.4rem,5.6vw,4.2rem);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15191C; --surface:#1D2226; --ink:#E7E7E1; --muted:#A2A7A8; --line:#30363A;
+  --gold:#C9B384; --gold-ink:#CDB98C; --btn:#E7E7E1; --btn-ink:#15191C; --frame:#0B0D0F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15191C; --surface:#1D2226; --ink:#E7E7E1; --muted:#A2A7A8; --line:#30363A;
+  --gold:#C9B384; --gold-ink:#CDB98C; --btn:#E7E7E1; --btn-ink:#15191C; --frame:#0B0D0F; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:var(--step-0);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:600;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.025em}
+h1{font-size:var(--step-4)}
+h2{font-size:var(--step-3)}
+h3{font-size:var(--step-1);font-weight:500;letter-spacing:-.01em;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.lead{font-size:var(--step-1);color:var(--muted);max-width:30em}
+.prose{max-width:34em;color:var(--muted)}
+.mark{display:inline-block;aspect-ratio:539/282;background:var(--gold);-webkit-mask:url(img/mark_a.png) center/contain no-repeat;mask:url(img/mark_a.png) center/contain no-repeat}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;font-weight:500}
+.brand .mark{width:40px}
+.top small{color:var(--muted);font-size:var(--step--1)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;padding-block:56px 72px;align-items:center}
+@media (min-width:900px){.hero{grid-template-columns:minmax(0,1fr) auto;gap:72px;padding-block:72px 96px}}
+.hero-text{display:grid;gap:26px;min-width:0}
+.switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;background:var(--surface);width:max-content;max-width:100%}
+.switch button{font:inherit;font-size:var(--step--1);font-weight:500;border:0;background:transparent;color:var(--muted);padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.switch button[aria-pressed="true"]{background:var(--btn);color:var(--btn-ink)}
+.stage{display:grid;justify-items:center;gap:14px;min-width:0;margin:0}
+.stage figcaption{font-size:var(--step--1);color:var(--muted)}
+
+/* phone */
+.screen,.scroll,.feed,.hls{min-width:0}
+.phone{width:352px;max-width:100%;aspect-ratio:9/19;background:var(--frame);border-radius:52px;padding:11px;box-shadow:0 40px 80px -40px rgba(10,14,16,.55),0 0 0 1px rgba(255,255,255,.08) inset}
+.screen{height:100%;border-radius:42px;background:var(--ig-bg);color:var(--ig-fg);overflow:hidden;display:flex;flex-direction:column;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:12px;line-height:1.35;font-weight:400}
+.sb{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 6px;font-weight:600;font-size:13px}
+.sb .isl{width:88px;height:24px;background:var(--ig-bg);border-radius:20px;box-shadow:0 0 0 1px var(--ig-line)}
+.scroll{flex:1;overflow-y:auto;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.igbar{display:flex;align-items:center;gap:10px;padding:6px 14px 10px;font-weight:700;font-size:15px}
+.igbar svg{width:18px;height:18px;flex:none}
+.prof{display:flex;gap:16px;align-items:center;padding:4px 14px 10px}
+.ava{width:74px;height:74px;border-radius:50%;background:var(--p-slate);display:grid;place-items:center;flex:none;box-shadow:0 0 0 2px var(--ig-bg),0 0 0 3px var(--p-gold)}
+.ava .mark{width:46px;background:var(--p-gold)}
+.stats{display:flex;gap:18px;flex:1;justify-content:space-around;text-align:center}
+.stats b{display:block;font-size:14px}
+.stats span{font-size:11.5px}
+.bio{padding:0 14px 10px;display:grid;gap:2px}
+.bio b{font-size:12.5px}
+.bio .cat{color:var(--ig-muted)}
+.bio .lnk{color:#E0F1FF;font-weight:600}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 14px 12px}
+.btns span{background:var(--ig-btn);border-radius:8px;text-align:center;padding:7px 0;font-weight:600}
+.btns span:first-child{background:var(--ig-blue)}
+.hls{display:flex;gap:12px;padding:2px 14px 12px;overflow:hidden}
+.hl-item{display:grid;justify-items:center;gap:4px;flex:none;font-size:10.5px}
+.hl-item .ring{width:54px;height:54px;box-shadow:0 0 0 2px var(--ig-bg),0 0 0 3px var(--ig-line)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--ig-line)}
+.tabs span{display:grid;place-items:center;padding:9px 0;color:var(--ig-muted)}
+.tabs span:first-child{color:var(--ig-fg);box-shadow:inset 0 -1px 0 var(--ig-fg)}
+.tabs svg{width:20px;height:20px}
+.grid-new{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px}
+.grid-old{display:none}
+.grid-old img{display:block;width:100%}
+.phone[data-view="old"] .grid-new{display:none}
+.phone[data-view="old"] .grid-old{display:block}
+.phone[data-view="old"] .hls,.phone[data-view="old"] .bio .lnk{display:none}
+.feed > *{animation:swap .45s ease both}
+@keyframes swap{from{opacity:.25}to{opacity:1}}
+.grid-new > *{animation:tile .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 55ms)}
+@keyframes tile{from{opacity:.35;transform:scale(.97)}to{opacity:1;transform:none}}
+
+/* ---------- posts: 3:4, everything sized in container units ---------- */
+.post{container-type:inline-size;position:relative;overflow:hidden;aspect-ratio:3/4;background:var(--p-slate);color:var(--p-white);width:100%;max-width:100%;font-family:var(--font)}
+.post .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.post .in{position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column}
+.post .mark{background:var(--p-white)}
+.tracked{font-size:2.9cqw;font-weight:400;letter-spacing:.55em;text-transform:uppercase;padding-left:.55em}
+.pill{display:inline-block;background:var(--p-paper);color:var(--p-ink);padding:0 2.2cqw;border-radius:1.6cqw;font-weight:500;line-height:1.25}
+
+/* sky headline (listing) */
+.p-sky{background:linear-gradient(to bottom,var(--p-sky-1),var(--p-sky-2) 42%)}
+.p-sky.u{background:linear-gradient(to bottom,var(--p-sky-u1),var(--p-sky-u2) 42%)}
+.p-sky .ph{top:auto;bottom:0;height:80%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34%);mask-image:linear-gradient(to bottom,transparent 0,#000 34%)}
+.p-sky .shade{position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,var(--p-shade),var(--p-shade-0))}
+.p-sky .head{text-align:center;color:var(--p-ink);display:grid;gap:2.4cqw;margin-top:4cqw}
+.p-sky .head .hd{font-size:10.4cqw;font-weight:600;line-height:1;letter-spacing:-.035em}
+.p-sky .head .tracked{color:var(--p-ink);opacity:.8}
+.p-sky .m{position:absolute;top:6cqw;right:6cqw;width:8.5cqw;background:var(--p-ink);opacity:.85}
+.p-sky .bot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:4cqw}
+.p-sky .claim{font-size:7cqw;font-weight:600;line-height:1.3;letter-spacing:-.02em}
+.p-sky .claim .pill{font-weight:500}
+.p-sky .meta{font-size:2.9cqw;line-height:1.5;text-align:right;opacity:.9}
+
+/* split glass */
+.p-split .blur{filter:blur(2.2cqw) saturate(1.05) brightness(.82);transform:scale(1.12);clip-path:inset(0 0 0 50%)}
+.p-split .sharp{clip-path:inset(0 50% 0 0)}
+.p-split .side{position:absolute;top:0;bottom:0;left:50%;right:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4.6cqw;text-align:center;padding:6cqw 4cqw;background:var(--p-glass)}
+.p-split .side .mark{width:11cqw}
+.p-split .name{font-size:6.4cqw;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.p-split .name small{display:block;font-size:2.7cqw;font-weight:300;letter-spacing:.32em;text-transform:uppercase;margin-top:1.4cqw;opacity:.85}
+.p-split .rule{width:14cqw;height:1px;background:var(--p-glass-line)}
+.p-split ul{list-style:none;margin:0;padding:0;display:grid;gap:3.4cqw;font-size:2.9cqw;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
+.p-split li.on{border:1px solid var(--p-white);border-radius:99px;padding:1.6cqw 4cqw;font-weight:500}
+.p-split .btn{border:1px solid var(--p-glass-line);border-radius:99px;padding:1.4cqw 4.4cqw;font-size:2.6cqw;font-weight:400}
+
+/* tiled interior */
+.p-tiles .ph{filter:brightness(.62) saturate(.9)}
+.p-tiles .lines{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
+.p-tiles .lines i{border-right:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+.p-tiles .lines i.f{background:var(--p-slate);opacity:.88}
+.p-tiles .lines i.g{background:var(--p-gold);opacity:.82}
+.p-tiles .in{justify-content:center;gap:5cqw}
+.p-tiles .hd{font-size:15cqw;font-weight:200;line-height:.95;letter-spacing:-.05em}
+.p-tiles .hd span{display:block}
+.p-tiles .hd .sm{font-size:4.4cqw;font-weight:400;letter-spacing:0;margin:0 0 1.5cqw .8cqw}
+.p-tiles .sub{font-size:3cqw;max-width:52%;opacity:.85;line-height:1.45}
+.p-tiles .m{position:absolute;left:7cqw;bottom:7cqw;width:9cqw}
+
+/* sold */
+.p-sold .shade{position:absolute;inset:0;background:linear-gradient(to top,var(--p-shade) 0,var(--p-shade-0) 50%)}
+.p-sold .in{justify-content:flex-end;align-items:center;text-align:center;gap:2cqw}
+.p-sold .hd{font-size:14cqw;font-weight:600;letter-spacing:-.045em;line-height:1}
+.p-sold .tracked{opacity:.9}
+.p-sold .m{position:absolute;top:6cqw;left:50%;width:10cqw;margin-left:-5cqw}
+
+/* event */
+.p-event .ph{object-position:42% 50%}
+.p-event .shade{position:absolute;inset:0;background:linear-gradient(to top,var(--p-shade) 0,var(--p-shade) 22%,var(--p-shade-0) 62%)}
+.p-event .in{justify-content:flex-end;gap:2.4cqw}
+.p-event .hd{font-size:8.6cqw;font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.p-event .when{font-size:3.2cqw;display:flex;gap:2.4cqw;align-items:center;opacity:.92}
+.p-event .when i{width:6cqw;height:1px;background:var(--p-gold)}
+.p-event .m{position:absolute;top:6cqw;right:6cqw;width:9cqw}
+
+/* quote */
+.p-quote{background:var(--p-paper);color:var(--p-ink)}
+.p-quote .in{justify-content:space-between}
+.p-quote .mark{background:var(--p-gold);width:10cqw}
+.p-quote .hd{font-size:10.5cqw;font-weight:300;line-height:1.08;letter-spacing:-.04em}
+.p-quote .hd b{font-weight:600}
+
+/* guide */
+.p-guide .in{justify-content:space-between}
+.p-guide .num{font-size:52cqw;font-weight:200;line-height:.8;letter-spacing:-.06em;color:var(--p-gold);margin-left:-2cqw}
+.p-guide .hd{font-size:8.4cqw;font-weight:500;letter-spacing:-.03em;line-height:1.08}
+.p-guide .foot{display:flex;justify-content:space-between;align-items:center}
+.p-guide .dots{display:flex;gap:1.6cqw;align-items:center}
+.p-guide .dots i{width:1.6cqw;height:1.6cqw;border-radius:50%;background:var(--p-gold);opacity:.35}
+.p-guide .dots i:first-child{opacity:1;width:6cqw;border-radius:99px}
+.p-guide .mark{background:var(--p-gold);width:10cqw}
+
+/* photo with signature */
+.p-photo .in{justify-content:flex-end;align-items:flex-end;padding:5.5cqw}
+.p-photo .mark{width:9cqw;opacity:.92;filter:drop-shadow(0 0 6px rgba(0,0,0,.3))}
+.p-photo .chip{position:absolute;left:5.5cqw;bottom:5.5cqw;background:var(--p-glass);border:1px solid var(--p-glass-line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:3.2cqw;font-weight:500;padding:1.4cqw 3.6cqw;border-radius:99px}
+
+/* sections */
+section{padding-block:88px;border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:14px;margin-bottom:44px;max-width:44rem}
+.sec-close{margin-top:40px;color:var(--muted);max-width:36em}
+
+.changes{display:grid;gap:56px}
+@media (min-width:900px){.changes{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pair figure{margin:0;display:grid;gap:10px;min-width:0}
+.pair figcaption{font-size:var(--step--1);color:var(--muted)}
+.pair .old{aspect-ratio:3/4;overflow:hidden;background:var(--surface)}
+.pair .old img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block}
+.points{display:grid;gap:30px}
+.points div{display:grid;gap:6px;padding-top:18px;border-top:1px solid var(--line)}
+.points p{color:var(--muted)}
+
+.tpl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:44px 28px}
+.tpl figure{margin:0;display:grid;gap:14px;align-content:start;min-width:0}
+.tpl .post{border-radius:6px;box-shadow:0 24px 50px -34px rgba(10,14,16,.6)}
+.tpl figcaption{display:grid;gap:2px}
+.tpl figcaption p{color:var(--muted);font-size:var(--step--1)}
+
+.look{display:grid;gap:48px;align-items:center}
+@media (min-width:900px){.look{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}}
+.cmp{position:relative;aspect-ratio:1206/959;overflow:hidden;--pos:50%;background:var(--surface);max-width:100%;border-radius:6px}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;user-select:none;pointer-events:none}
+.cmp .after{clip-path:inset(0 0 0 var(--pos))}
+.cmp .knob{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--p-white);pointer-events:none}
+.cmp .knob::after{content:"";position:absolute;top:50%;left:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:var(--p-white);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.cmp .tag{position:absolute;bottom:14px;font-size:var(--step--1);font-weight:500;background:var(--p-paper);color:var(--p-ink);padding:4px 12px;border-radius:99px;pointer-events:none}
+.cmp .tag.l{left:14px}.cmp .tag.r{right:14px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:4px}
+.look-text{display:grid;gap:18px}
+.look-text ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;color:var(--muted)}
+.look-text li{padding-left:22px;position:relative}
+.look-text li::before{content:"";position:absolute;left:0;top:.8em;width:12px;height:1px;background:var(--gold)}
+
+/* stories */
+.stories{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+.stories > figure{scroll-snap-align:start;margin:0;display:grid;gap:12px;min-width:0}
+.stories figcaption{font-size:var(--step--1);color:var(--muted)}
+.story{container-type:inline-size;position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:18px;background:var(--p-slate);color:var(--p-white);font-family:var(--font);max-width:100%}
+.story .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.story .in{position:absolute;inset:0;padding:5cqw 6cqw 8cqw;display:flex;flex-direction:column}
+.story .bars{display:flex;gap:1.4cqw}
+.story .bars i{flex:1;height:.8cqw;border-radius:2px;background:rgba(255,255,255,.4)}
+.story .bars i:first-child{background:var(--p-white)}
+.story .who{display:flex;align-items:center;gap:2.6cqw;margin-top:3.4cqw;font-size:3.8cqw;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.story .who .av{width:8cqw;height:8cqw;border-radius:50%;background:var(--p-slate);display:grid;place-items:center;box-shadow:0 0 0 1px var(--p-gold)}
+.story .who .mark{width:5.2cqw;background:var(--p-gold)}
+.story .hd{font-weight:600;line-height:1.02;letter-spacing:-.035em;text-wrap:balance}
+.story .shade-t{position:absolute;inset:0;background:linear-gradient(to bottom,var(--p-shade) 0%,var(--p-shade-0) 40%)}
+.glass{background:var(--p-glass);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);border-radius:5cqw}
+.s-new .card{background:var(--p-glass-dark);margin-top:auto;padding:6cqw;display:grid;gap:3.6cqw;justify-items:start}
+.s-new .card .tracked{font-size:3cqw}
+.s-new .card .hd{font-size:10cqw}
+.sticker{display:inline-flex;align-items:center;gap:2cqw;background:var(--p-white);color:#3B7CF6;font-weight:600;font-size:3.9cqw;padding:2.4cqw 4cqw;border-radius:2.6cqw}
+.sticker svg{width:4.4cqw;height:4.4cqw}
+.s-event .shade-t{background:linear-gradient(to bottom,var(--p-shade) 0%,var(--p-shade) 26%,var(--p-shade-0) 55%)}
+.s-event .hd{margin-top:8cqw;font-size:13cqw}
+.s-event .loc{margin-top:auto;align-self:flex-start;background:var(--p-white);color:var(--p-ink);font-weight:600;font-size:3.8cqw;padding:2cqw 3.6cqw;border-radius:2.4cqw;display:inline-flex;gap:1.6cqw;align-items:center}
+.s-event .loc svg{width:4cqw;height:4cqw;color:#C13584}
+.s-ask .ph{filter:blur(3cqw) brightness(.55);transform:scale(1.15)}
+.s-ask .body{margin-block:auto;display:grid;gap:7cqw}
+.s-ask .hd{font-size:12.5cqw}
+.qbox{background:var(--p-white);border-radius:4cqw;overflow:hidden;color:var(--p-ink);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.qbox .q{background:var(--p-gold);color:var(--p-slate);padding:5cqw;font-weight:600;font-size:4.4cqw;text-align:center;line-height:1.3}
+.qbox .a{padding:5cqw;color:#8E8E8E;font-size:4cqw;text-align:center}
+.s-ask .foot .mark{width:12cqw;background:var(--p-gold)}
+
+.highlights{margin-top:52px;display:flex;flex-wrap:wrap;gap:28px 36px}
+.hlc{display:grid;justify-items:center;gap:10px;font-size:var(--step--1);font-weight:400}
+.ring{width:84px;height:84px;border-radius:50%;background:var(--p-slate);display:grid;place-items:center;box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--line)}
+.ring svg{width:46%;height:46%;color:var(--p-gold)}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:28px;counter-reset:s}
+@media (min-width:800px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.steps li{counter-increment:s;display:grid;align-content:start;gap:6px;padding-top:18px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-size:var(--step-2);font-weight:200;color:var(--gold-ink);line-height:1}
+.steps p{color:var(--muted)}
+.final{margin-top:80px;background:var(--p-slate);color:var(--p-paper);padding:clamp(32px,6vw,72px);display:grid;gap:24px;position:relative;overflow:hidden;border-radius:6px}
+.final h2{max-width:14em}
+.final p{color:#B9BDBD;max-width:30em}
+.final .mark{position:absolute;right:-30px;bottom:-24px;width:clamp(160px,28vw,320px);background:var(--p-gold);opacity:.18}
+.cta{justify-self:start;display:inline-flex;align-items:center;gap:12px;background:var(--p-gold);color:var(--p-slate);font-weight:600;text-decoration:none;padding:14px 26px;border-radius:999px;transition:transform .2s,background .2s;position:relative}
+.cta:hover{transform:translateY(-1px);background:#D2BE90}
+.handle{font-size:var(--step--1);color:#B9BDBD}
+.handle b{color:var(--p-paper);font-weight:600;user-select:all}
+
+footer{border-top:1px solid var(--line);padding-block:32px 48px;color:var(--muted);font-size:var(--step--1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true"></span><span>Immobilien Boutique AG</span></div>
+    <small>Instagram-Konzept von Mozaic Digital</small>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Ihre Objekte verdienen das ganze Bild.</h1>
+        <p class="lead">Weniger Balken, mehr Architektur. So wirkt Ihr Feed wie ein Portfolio.</p>
+        <div class="switch" role="group" aria-label="Feed vergleichen">
+          <button type="button" id="v-new" aria-pressed="true">Neuer Feed</button>
+          <button type="button" id="v-old" aria-pressed="false">Heutiger Feed</button>
+        </div>
+      </div>
+      <figure class="stage">
+        <div class="phone" id="phone" data-view="new">
+          <div class="screen">
+            <div class="sb"><span>06:54</span><span class="isl"></span><span>5G</span></div>
+            <div class="scroll" tabindex="0" aria-label="Instagram-Profil, scrollbar">
+              <div class="igbar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                <span>immobilienboutique_ag</span>
+              </div>
+              <div class="prof">
+                <div class="ava"><span class="mark"></span></div>
+                <div class="stats"><div><b>12</b><span>Beiträge</span></div><div><b>6</b><span>Highlights</span></div><div><b>CH</b><span>Region</span></div></div>
+              </div>
+              <div class="bio">
+                <b>Immobilien Boutique AG</b>
+                <span class="cat">Immobilienagentur</span>
+                <span>Ausgewählte Wohnobjekte in Berg und Stadt.</span>
+                <span class="lnk">Besichtigung anfragen</span>
+              </div>
+              <div class="btns"><span>Folgen</span><span>Nachricht</span></div>
+              <div class="hls" id="hls"></div>
+              <div class="tabs" aria-hidden="true">
+                <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h5v5H3zm6.5 0h5v5h-5zM16 3h5v5h-5zM3 9.5h5v5H3zm6.5 0h5v5h-5zm6.5 0h5v5h-5zM3 16h5v5H3zm6.5 0h5v5h-5zm6.5 0h5v5h-5z"/></svg></span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 9l5 3-5 3z"/></svg></span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 3l3 3-3 3M4 11V9a3 3 0 013-3h13M7 21l-3-3 3-3M20 13v2a3 3 0 01-3 3H4"/></svg></span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="4"/><circle cx="12" cy="11" r="3"/><path d="M7 19c1-2.5 3-3.5 5-3.5s4 1 5 3.5"/></svg></span>
+              </div>
+              <div class="feed">
+                <div class="grid-new" id="grid"></div>
+                <div class="grid-old"><img src="img/grid_before.jpg" alt="Heutiger Feed mit Logo-Balken auf jedem Bild" loading="lazy"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption id="cap">Neuer Feed, Kacheln im Format 3:4</figcaption>
+      </figure>
+    </div>
+
+    <section aria-labelledby="h-change">
+      <div class="sec-head">
+        <h2 id="h-change">Was sich ändert</h2>
+        <p class="prose">Drei kleine Entscheidungen mit grosser Wirkung.</p>
+      </div>
+      <div class="changes">
+        <div class="pair">
+          <figure>
+            <div class="old"><img src="img/alpine_before.jpg" alt="Bisheriger Beitrag mit grossem Logo-Balken"></div>
+            <figcaption>Heute</figcaption>
+          </figure>
+          <figure>
+            <div data-post="sky-alpine"></div>
+            <figcaption>Neu</figcaption>
+          </figure>
+        </div>
+        <div class="points">
+          <div><h3>Das Foto steht im Mittelpunkt</h3><p>Kein Balken mehr. Das Dachzeichen signiert dezent.</p></div>
+          <div><h3>Grosse Titel, wenig Text</h3><p>Ein starker Satz pro Beitrag, gesetzt in Poppins.</p></div>
+          <div><h3>Ein Look für alle Objekte</h3><p>Stadt und Berg wirken wie aus einem Guss.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-tpl">
+      <div class="sec-head">
+        <h2 id="h-tpl">Sechs Vorlagen</h2>
+        <p class="prose">Foto und Titel einsetzen, fertig.</p>
+      </div>
+      <div class="tpl">
+        <figure><div data-post="sky-alpine"></div><figcaption><h3>Neu im Angebot</h3><p>Der erste Eindruck eines Objekts</p></figcaption></figure>
+        <figure><div data-post="split-urban"></div><figcaption><h3>Objekt im Detail</h3><p>Ausstattung auf einen Blick</p></figcaption></figure>
+        <figure><div data-post="tiles"></div><figcaption><h3>Innenräume</h3><p>Stimmung statt Grundriss</p></figcaption></figure>
+        <figure><div data-post="sold"></div><figcaption><h3>Verkauft</h3><p>Erfolg, leise erzählt</p></figcaption></figure>
+        <figure><div data-post="event"></div><figcaption><h3>Unterwegs</h3><p>Präsenz in der Branche</p></figcaption></figure>
+        <figure><div data-post="guide"></div><figcaption><h3>Ratgeber</h3><p>Karussell für Eigentümer</p></figcaption></figure>
+      </div>
+      <p class="sec-close">Objektangaben sind Beispieltexte.</p>
+    </section>
+
+    <section aria-labelledby="h-look">
+      <div class="look">
+        <div class="cmp" id="cmp">
+          <img src="img/alpine_raw.jpg" alt="Originalfoto vor der Bearbeitung">
+          <img class="after" src="img/alpine.jpg" alt="Dasselbe Foto mit dem neuen Bildlook">
+          <span class="knob" aria-hidden="true"></span>
+          <span class="tag l" aria-hidden="true">Original</span><span class="tag r" aria-hidden="true">Neu</span>
+          <input type="range" id="cmp-range" min="0" max="100" value="50" aria-label="Vergleich zwischen Original und neuem Bildlook">
+        </div>
+        <div class="look-text">
+          <h2 id="h-look">Der Bildlook</h2>
+          <p class="prose">Regler ziehen und vergleichen.</p>
+          <ul>
+            <li>Mehr Tiefe in den Schatten</li>
+            <li>Warmes Holz, klarer Himmel</li>
+            <li>Ruhige, natürliche Farben</li>
+          </ul>
+          <p class="prose">Hochwertig und trotzdem echt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-st">
+      <div class="sec-head">
+        <h2 id="h-st">Stories und Highlights</h2>
+        <p class="prose">Nähe schaffen, Anfragen auslösen.</p>
+      </div>
+      <div class="stories">
+        <figure>
+          <div class="story s-new">
+            <img class="ph" src="img/alpine.jpg" alt="" style="object-position:68% 50%">
+            <div class="shade-t"></div>
+            <div class="in">
+              <div class="bars"><i></i><i></i><i></i></div>
+              <div class="who"><span class="av"><span class="mark"></span></span>immobilienboutique_ag</div>
+              <div class="card glass">
+                <p class="tracked">Neu</p>
+                <p class="hd">Wohnen mit Weitblick</p>
+                <span class="sticker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>Besichtigung anfragen</span>
+              </div>
+            </div>
+          </div>
+          <figcaption>Neues Objekt</figcaption>
+        </figure>
+        <figure>
+          <div class="story s-event">
+            <img class="ph" src="img/event.jpg" alt="" style="object-position:40% 50%">
+            <div class="shade-t"></div>
+            <div class="in">
+              <div class="bars"><i></i><i></i><i></i></div>
+              <div class="who"><span class="av"><span class="mark"></span></span>immobilienboutique_ag</div>
+              <p class="hd">Heute in Basel</p>
+              <span class="loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>Novartis Pavillon</span>
+            </div>
+          </div>
+          <figcaption>Hinter den Kulissen</figcaption>
+        </figure>
+        <figure>
+          <div class="story s-ask">
+            <img class="ph" src="img/t_living.jpg" alt="">
+            <div class="in">
+              <div class="bars"><i></i><i></i><i></i></div>
+              <div class="who"><span class="av"><span class="mark"></span></span>immobilienboutique_ag</div>
+              <div class="body">
+                <p class="hd">Fragen zum Verkauf?</p>
+                <div class="qbox"><div class="q">Was möchten Sie wissen?</div><div class="a">Frage eingeben</div></div>
+              </div>
+              <div class="foot"><span class="mark"></span></div>
+            </div>
+          </div>
+          <figcaption>Fragebox</figcaption>
+        </figure>
+      </div>
+      <div class="highlights" id="highlights"></div>
+    </section>
+
+    <section aria-labelledby="h-next">
+      <div class="sec-head">
+        <h2 id="h-next">So geht es weiter</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Gespräch</h3><p>Ziele und Objekte klären.</p></li>
+        <li><h3>Vorlagen und Look</h3><p>Alles bereit zum Bearbeiten.</p></li>
+        <li><h3>Betreuung</h3><p>Auf Wunsch jeden Monat.</p></li>
+      </ol>
+      <div class="final">
+        <span class="mark" aria-hidden="true"></span>
+        <h2>Ihre Objekte sind schön. Zeigen wir es.</h2>
+        <a class="cta" href="https://www.instagram.com/bymozaic.ch/" target="_blank" rel="noopener">Gespräch vereinbaren</a>
+        <p class="handle">Instagram: <b>@bymozaic.ch</b></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Konzept und Gestaltung: Mozaic Digital</span>
+    <span>Fotos und Logo: Immobilien Boutique AG</span>
+  </footer>
+</div>
+
+<template id="t-sky-alpine">
+  <div class="post p-sky" role="img" aria-label="Neu im Angebot: Wohnen mit Weitblick">
+    <img class="ph" src="img/alpine.jpg" alt="" style="object-position:62% 40%">
+    <div class="shade"></div>
+    <span class="mark m"></span>
+    <div class="in">
+      <div class="head"><p class="hd">Wohnen mit Weitblick</p><p class="tracked">Neu im Angebot</p></div>
+      <div class="bot">
+        <p class="claim">Holz, <span class="pill">Licht</span><br>und <span class="pill">Berge</span>.</p>
+        <p class="meta">4½ Zimmer<br>112 m²</p>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="t-sky-urban">
+  <div class="post p-sky u" role="img" aria-label="Neu im Angebot: Grün in der Stadt">
+    <img class="ph" src="img/urban.jpg" alt="" style="object-position:50% 30%">
+    <div class="shade"></div>
+    <span class="mark m"></span>
+    <div class="in">
+      <div class="head"><p class="hd">Grün in der Stadt</p><p class="tracked">Neu im Angebot</p></div>
+      <div class="bot">
+        <p class="claim">Mitten <span class="pill">drin</span>,<br>ganz <span class="pill">ruhig</span>.</p>
+        <p class="meta">3½ Zimmer<br>86 m²</p>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="t-split-urban">
+  <div class="post p-split" role="img" aria-label="Objekt im Detail: Stadthaus Grün">
+    <img class="ph blur" src="img/urban.jpg" alt="" style="object-position:60% 50%">
+    <img class="ph sharp" src="img/urban.jpg" alt="" style="object-position:38% 50%">
+    <div class="side">
+      <span class="mark"></span>
+      <p class="name">Stadthaus Grün<small>Neubau</small></p>
+      <span class="rule"></span>
+      <ul><li>Loggia</li><li>Lift</li><li class="on">Grünfassade</li><li>Velokeller</li></ul>
+      <span class="rule"></span>
+      <span class="btn">Objekt ansehen</span>
+    </div>
+  </div>
+</template>
+<template id="t-split-alpine">
+  <div class="post p-split" role="img" aria-label="Objekt im Detail: Haus Lärche">
+    <img class="ph blur" src="img/alpine.jpg" alt="" style="object-position:85% 50%">
+    <img class="ph sharp" src="img/alpine.jpg" alt="" style="object-position:70% 50%">
+    <div class="side">
+      <span class="mark"></span>
+      <p class="name">Haus Lärche<small>Neubau</small></p>
+      <span class="rule"></span>
+      <ul><li>Bergsicht</li><li class="on">Holzfassade</li><li>Balkon</li><li>Tiefgarage</li></ul>
+      <span class="rule"></span>
+      <span class="btn">Objekt ansehen</span>
+    </div>
+  </div>
+</template>
+<template id="t-tiles">
+  <div class="post p-tiles" role="img" aria-label="Innenraum: Ihr neues Zuhause">
+    <img class="ph" src="img/t_dining.jpg" alt="" style="object-position:40% 50%">
+    <div class="lines"><i class="f"></i><i></i><i></i><i class="f"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="g"></i></div>
+    <div class="in">
+      <p class="hd"><span class="sm">Ihr neues</span><span>Zuhause</span></p>
+      <p class="sub">Räume mit Charakter, bereit für Ihre Geschichte.</p>
+    </div>
+    <span class="mark m"></span>
+  </div>
+</template>
+<template id="t-sold">
+  <div class="post p-sold" role="img" aria-label="Verkauft: Engadiner Haus">
+    <img class="ph" src="img/t_engadin.jpg" alt="" style="object-position:50% 40%">
+    <div class="shade"></div>
+    <span class="mark m"></span>
+    <div class="in"><p class="hd">Verkauft.</p><p class="tracked">Danke für Ihr Vertrauen</p></div>
+  </div>
+</template>
+<template id="t-event">
+  <div class="post p-event" role="img" aria-label="Unterwegs: SVIT Herbstanlass">
+    <img class="ph" src="img/event.jpg" alt="">
+    <div class="shade"></div>
+    <span class="mark m"></span>
+    <div class="in"><p class="hd">15. Herbstanlass SVIT</p><p class="when"><i></i>Basel, 21. Oktober 2026</p></div>
+  </div>
+</template>
+<template id="t-quote">
+  <div class="post p-quote" role="img" aria-label="Haltung: Zuhause beginnt beim ersten Schritt">
+    <div class="in"><span class="mark"></span><p class="hd">Zuhause beginnt beim <b>ersten Schritt.</b></p></div>
+  </div>
+</template>
+<template id="t-guide">
+  <div class="post p-guide" role="img" aria-label="Ratgeber: 3 Fragen vor dem Verkauf">
+    <div class="in">
+      <p class="num">3</p>
+      <p class="hd">Fragen vor dem Verkauf Ihrer Wohnung</p>
+      <div class="foot"><span class="dots"><i></i><i></i><i></i><i></i></span><span class="mark"></span></div>
+    </div>
+  </div>
+</template>
+
+<script>
+(function(){
+  var photo=function(src,pos,label,chip){
+    return '<div class="post p-photo" role="img" aria-label="'+label+'"><img class="ph" src="'+src+'" alt="" style="object-position:'+(pos||'50% 50%')+'">'+(chip?'<span class="chip">'+chip+'</span>':'')+'<div class="in"><span class="mark"></span></div></div>';
+  };
+  var tpl=function(id){var t=document.getElementById('t-'+id);return t?t.innerHTML:'';};
+  document.querySelectorAll('[data-post]').forEach(function(el){el.outerHTML=tpl(el.getAttribute('data-post'));});
+
+  var feed=[
+    tpl('sky-alpine'), tpl('event'), photo('img/t_view.jpg','50% 50%','Bergsicht'),
+    tpl('tiles'), tpl('split-urban'), tpl('sold'),
+    photo('img/t_garden.jpg','50% 50%','Garten mit Bergsicht'), tpl('guide'), tpl('quote'),
+    tpl('split-alpine'), photo('img/t_chalet.jpg','50% 50%','Chalet im Bau','Im Bau'), tpl('sky-urban')
+  ];
+  var g=document.getElementById('grid');
+  g.innerHTML=feed.join('');
+  Array.prototype.forEach.call(g.children,function(c,i){c.style.setProperty('--i',i);});
+
+  var icons={
+    'Angebote':'<path d="M4 11.5L12 5l8 6.5V20H4z"/><path d="M10 20v-5h4v5"/>',
+    'Verkauft':'<circle cx="8.5" cy="12" r="3.5"/><path d="M12 12h8.5M17.5 12v3M20.5 12v2"/>',
+    'Regionen':'<path d="M2.5 19l6.5-10 4 6 2.5-3.5 6 7.5z"/>',
+    'Anlässe':'<rect x="4" y="5.5" width="16" height="14.5" rx="1.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/>',
+    'Team':'<circle cx="9" cy="9" r="3"/><circle cx="16.5" cy="10" r="2.4"/><path d="M3.5 19.5c.8-3.2 3-4.8 5.5-4.8s4.7 1.6 5.5 4.8M15 15c2.6-.4 4.6 1 5.4 4.5"/>',
+    'Kontakt':'<rect x="3.5" y="6" width="17" height="12.5" rx="1.5"/><path d="M4 7l8 6 8-6"/>'
+  };
+  var ring=function(k){return '<span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">'+icons[k]+'</svg></span>';};
+  var hl='',hp='';
+  Object.keys(icons).forEach(function(k){
+    hl+='<div class="hlc">'+ring(k)+'<span>'+k+'</span></div>';
+    hp+='<div class="hl-item">'+ring(k)+'<span>'+k+'</span></div>';
+  });
+  document.getElementById('highlights').innerHTML=hl;
+  document.getElementById('hls').innerHTML=hp;
+
+  var phone=document.getElementById('phone'), bn=document.getElementById('v-new'), bo=document.getElementById('v-old'), cap=document.getElementById('cap');
+  function view(v){
+    phone.setAttribute('data-view',v);
+    bn.setAttribute('aria-pressed',v==='new');
+    bo.setAttribute('aria-pressed',v==='old');
+    cap.textContent=v==='new'?'Neuer Feed, Kacheln im Format 3:4':'Heutiger Feed';
+  }
+  bn.addEventListener('click',function(){view('new');});
+  bo.addEventListener('click',function(){view('old');});
+
+  var cmp=document.getElementById('cmp'), r=document.getElementById('cmp-range');
+  r.addEventListener('input',function(){cmp.style.setProperty('--pos',r.value+'%');});
+})();
+</script>
+
+</body>
+</html>
